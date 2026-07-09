@@ -2,7 +2,7 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   Briefcase,
   ShoppingCart,
@@ -12,19 +12,13 @@ import {
   Tags,
   UserCheck,
 } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
-
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { LogoIcon } from "@/components/logo";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { ColourfulText } from "@/components/ui/colourful-text";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 const content = {
   es: {
@@ -244,7 +238,6 @@ const content = {
 
 export default function Home() {
   const [language, setLanguage] = useState('es');
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
   const c = content[language as keyof typeof content];
 
@@ -258,9 +251,15 @@ export default function Home() {
         <section className="relative w-full h-[550px] overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 w-full h-full bg-background z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
           <div className="container mx-auto px-4 text-center z-20">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-foreground">
-              {c.hero.title}
-            </h1>
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline text-foreground">
+                {c.hero.title}
+              </h1>
+              <LogoIcon
+                squareClassName="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14"
+                gapClassName="gap-1 md:gap-1.5"
+              />
+            </div>
             <p className="uppercase text-lg sm:text-xl md:text-2xl font-semibold tracking-wider mt-4">
               <ColourfulText text={c.hero.subtitle1} /> & <ColourfulText text={c.hero.subtitle2} />
             </p>
@@ -417,7 +416,7 @@ export default function Home() {
                         ) : index === 4 ? (
                           language === 'es' ?
                           <>Servicio especializado para <ColourfulText text="facilitar transacciones internacionales" />, optimizando el proceso, asegurando <ColourfulText text="cumplimiento normativo" /> y minimizando <ColourfulText text="riesgos cambiarios" />.</> :
-                          <>A specialized service to <ColourfulText text="facilitate international transactions" />, optimizing the process, ensuring <ColourfulText text="regulatory compliance" />, and minimizing <ColourfulText risk="currency risks" />.</>
+                          <>A specialized service to <ColourfulText text="facilitate international transactions" />, optimizing the process, ensuring <ColourfulText text="regulatory compliance" />, and minimizing <ColourfulText text="currency risks" />.</>
                         ) : index === 5 ? (
                           language === 'es' ?
                           <>Nuestros servicios construyen una <ColourfulText text="base sólida para modelos de IA" /> de alto rendimiento, asignando <ColourfulText text="etiquetas precisas" /> a grandes volúmenes de datos para que los modelos reconozcan patrones y tomen decisiones más inteligentes.</> :
@@ -446,39 +445,43 @@ export default function Home() {
                 <ColourfulText text={c.clients.title} />
               </h2>
             </div>
-            <div className="flex items-center justify-center">
-              <Carousel
-                opts={{ loop: true }}
-                plugins={[plugin.current]}
-                className="w-full max-w-6xl"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+          </div>
+          <div className="group relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            {[0, 1].map((group) => (
+              <div
+                key={group}
+                className="flex shrink-0 items-center animate-marquee group-hover:[animation-play-state:paused]"
+                aria-hidden={group === 1}
               >
-                <CarouselContent>
-                  {[...c.clients.logos, ...c.clients.logos].map((logo, index) => {
-                    const Wrapper = logo.href ? Link : 'div';
-                    const wrapperProps = logo.href ? { href: logo.href, target: "_blank", rel: "noopener noreferrer" } : {};
-                    return (
-                      <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
-                        <div className="p-1">
-                          <Wrapper {...wrapperProps}>
-                            <div className="flex aspect-square items-center justify-center p-6 relative">
-                              <Image
-                                src={logo.src}
-                                alt={logo.alt}
-                                width={180}
-                                height={90}
-                                className="object-contain transition-all duration-300"
-                              />
-                            </div>
-                          </Wrapper>
-                        </div>
-                      </CarouselItem>
-                    );
-                  })}
-                </CarouselContent>
-              </Carousel>
-            </div>
+                {[...c.clients.logos, ...c.clients.logos, ...c.clients.logos].map((logo, index) => {
+                  const wrapperClass = "mx-8 flex h-24 w-[180px] shrink-0 items-center justify-center md:mx-12";
+                  const image = (
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={180}
+                      height={90}
+                      className="max-h-full w-auto object-contain transition-transform duration-300 hover:scale-110"
+                    />
+                  );
+                  return logo.href ? (
+                    <Link
+                      key={index}
+                      href={logo.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={wrapperClass}
+                    >
+                      {image}
+                    </Link>
+                  ) : (
+                    <div key={index} className={wrapperClass}>
+                      {image}
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </section>
 
