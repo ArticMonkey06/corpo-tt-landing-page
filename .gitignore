@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# auditoría interna (no versionar)
+docs/auditoria/
+
+# templates internos (plantillas de trabajo, no versionar)
+docs/templates/
+
+# secretos empresariales / credenciales (no versionar)
+/secrets/
+*.key
+*.p12
+credentials*.json
+service-account*.json
+firebase-adminsdk*.json
