@@ -11,10 +11,35 @@
 
 ## Style Guidelines:
 
-- Primary color: Blue (#0000FF), derived from the logo's blue squares. The choice evokes corporate trust and stability. Used for key interactive elements and links.
-- Background color: White (#FFFFFF), for a clean and professional feel. High contrast ensures excellent readability.
-- Accent color: Yellow (#FFFF00), strategically used for icons on dark backgrounds. This enhances visibility and guides the user’s focus to crucial interface elements.
-- Font family: 'Inter', a sans-serif typeface known for its clean lines and modern appearance, suitable for both headings and body text, and providing a consistent reading experience. Note: currently only Google Fonts are supported.
-- Maintain generous horizontal and vertical margins (around 5-10% of page dimensions) to ensure a spacious layout. The content will be left-aligned to improve readability and a sense of order.
-- Utilize simple, line-based or solid fill icons, primarily in yellow (#FFFF00) when used against dark blue backgrounds. Icons represent key concepts, improving visual communication.
-- The sections should have clearly defined blocks to separate content and images. Each section has a padding (20-40px) to allow content to have readable space around.
+> **Single source of truth:** all colors below are defined as tokens in
+> [`src/app/globals.css`](../src/app/globals.css) (CSS variables) and mapped in
+> [`tailwind.config.ts`](../tailwind.config.ts). Consume them via semantic
+> classes (`bg-primary`, `text-foreground`, `bg-brand`, …) — do **not** hardcode
+> hex values in components.
+
+- Primary color: a deep corporate blue, `--primary: hsl(216 65% 35%)` (≈ `#1f4a94`),
+  not a pure `#0000FF`. It evokes corporate trust and stability and is used for
+  key interactive elements, buttons, links and the focus ring (`--ring`).
+- Background color: White, `--background: hsl(0 0% 100%)` (`#FFFFFF`), for a clean
+  and professional feel with high contrast for readability. Section backgrounds
+  alternate with `--secondary: hsl(210 40% 96.1%)` (a very light blue-gray).
+- Foreground / text: `--foreground: hsl(222.2 84% 4.9%)` (near-black navy).
+- Brand blues (from the logo squares): `--brand-blue: #1e429f` (dark) and
+  `--brand-blue-light: #8d9fce` (light). Exposed as the Tailwind `brand` /
+  `brand-light` tokens and used in the logo (`logo.tsx`) and in the gradient
+  highlight text (`colourful-text.tsx`: `from-primary via-brand-light to-brand`).
+- Accent color: `--accent: hsl(220 30% 60%)`, a muted blue. **There is no yellow
+  accent** — the previous `#FFFF00` guideline was never implemented and has been
+  removed to match the real, sober blue palette.
+- Spotlight glow: `--spotlight: hsl(220, 60%, 85%)`, a very light blue used for
+  the hover spotlight on cards (`card-spotlight.tsx` via the `spotlightColor`
+  prop). Defined once as a token and consumed with `var(--spotlight)`.
+- Font family: 'Inter', a sans-serif typeface known for its clean lines and
+  modern appearance, suitable for both headings and body text (`font-headline` /
+  `font-body`). Loaded from Google Fonts.
+- Icons: simple line-based icons (lucide-react) and inline SVGs. Contact icons in
+  the floating dock are rendered in white (`text-white`) over dark circular
+  backgrounds — not yellow.
+- Layout: content is centered within a `container` with horizontal padding, and
+  sections use generous vertical padding (`py-16 md:py-24`) with clearly defined
+  blocks separated by background-color changes and images.

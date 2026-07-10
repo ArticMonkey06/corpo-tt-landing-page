@@ -17,7 +17,7 @@ export function AboutSection() {
           </h2>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-2 justify-center">
-          <CardSpotlight spotlightColor="hsl(220, 60%, 85%)" className="bg-secondary text-card-foreground p-0 overflow-hidden rounded-xl max-w-sm mx-auto">
+          <CardSpotlight spotlightColor="var(--spotlight)" className="bg-secondary text-card-foreground p-0 overflow-hidden rounded-xl max-w-sm mx-auto">
             <div className="flex flex-col items-center text-center h-full">
               <div className="relative w-full h-80">
                 <Image
@@ -39,7 +39,7 @@ export function AboutSection() {
               </div>
             </div>
           </CardSpotlight>
-          <CardSpotlight spotlightColor="hsl(220, 60%, 85%)" className="bg-secondary text-card-foreground p-0 overflow-hidden rounded-xl max-w-sm mx-auto">
+          <CardSpotlight spotlightColor="var(--spotlight)" className="bg-secondary text-card-foreground p-0 overflow-hidden rounded-xl max-w-sm mx-auto">
             <div className="flex flex-col items-center text-center h-full">
               <div className="relative w-full h-80">
                 <Image

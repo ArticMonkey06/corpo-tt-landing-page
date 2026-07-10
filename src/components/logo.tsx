@@ -15,12 +15,12 @@ export function LogoIcon({
       aria-hidden="true"
     >
       <div className={cn("flex", gapClassName)}>
-        <div className={cn("rounded-sm bg-[#8d9fce]", squareClassName)} />
-        <div className={cn("rounded-sm bg-[#1e429f]", squareClassName)} />
+        <div className={cn("rounded-sm bg-brand-light", squareClassName)} />
+        <div className={cn("rounded-sm bg-brand", squareClassName)} />
       </div>
       <div className={cn("flex", gapClassName)}>
-        <div className={cn("rounded-sm bg-[#1e429f]", squareClassName)} />
-        <div className={cn("rounded-sm bg-[#8d9fce]", squareClassName)} />
+        <div className={cn("rounded-sm bg-brand", squareClassName)} />
+        <div className={cn("rounded-sm bg-brand-light", squareClassName)} />
       </div>
     </div>
   );

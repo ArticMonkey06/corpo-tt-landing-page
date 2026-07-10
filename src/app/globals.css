@@ -37,6 +37,12 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* CorpoTT brand palette (real, implemented — see .docs/blueprint.md).
+       Stored as literal values and consumed via var() to avoid color drift. */
+    --brand-blue: #1e429f;
+    --brand-blue-light: #8d9fce;
+    --spotlight: hsl(220, 60%, 85%);
   }
   .dark {
     --background: 222.2 84% 4.9%;

@@ -23,7 +23,7 @@ export function ServicesSection() {
           {c.services.list.map((service, index) => (
             <CardSpotlight
               key={index}
-              spotlightColor="hsl(220, 60%, 85%)"
+              spotlightColor="var(--spotlight)"
               className={
                 "bg-card text-card-foreground p-0 overflow-hidden rounded-xl " +
                 (c.services.list.length % 2 !== 0 && index === c.services.list.length - 1
