@@ -92,7 +92,7 @@ export const content = {
         {
           icon: UserCheck,
           title: "Personal Capacitado de Venezuela",
-          description: "Ofrecemos **personal capacitado** sin las complications administrativas de la contratación, **adaptándonos a sus necesidades** para que pueda concentrarse en sus objetivos principales.",
+          description: "Ofrecemos **personal capacitado** sin las complicaciones administrativas de la contratación, **adaptándonos a sus necesidades** para que pueda concentrarse en sus objetivos principales.",
           image: "/images/team-corpott.webp",
           alt: "Personal capacitado de Venezuela para adaptarse a las necesidades de su empresa."
         },
