@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { ColourfulText } from "@/components/ui/colourful-text";
+import { Highlighted } from "@/components/ui/highlighted";
 import { useLanguage } from "@/contexts/language-context";
 
 export function WhoWeAreSection() {
-  const { c, language } = useLanguage();
+  const { c } = useLanguage();
 
   return (
     <section id="quienes-somos" className="w-full py-16 md:py-24 bg-secondary">
@@ -26,10 +27,7 @@ export function WhoWeAreSection() {
             </h2>
             <div className="mt-6 space-y-4 text-foreground/80">
               <p>
-                {language === 'es' ?
-                  <>Corpott Services tiene como filosofía fundamental la <ColourfulText text="calidad y excelencia" /> en la ejecución de sus trabajos, buscando con esto la plena satisfacción del cliente. Por ello, brindamos <ColourfulText text="soluciones adaptadas" /> para resolver problemas de logística, asistencia remota, gestión de tesorería y contratación de personal temporal.</> :
-                  <>Corpott Services' fundamental philosophy is <ColourfulText text="quality and excellence" /> in the execution of its work, seeking full client satisfaction. Therefore, we provide <ColourfulText text="adapted solutions" /> to solve problems in logistics, remote assistance, treasury management, and temporary staff hiring.</>
-                }
+                <Highlighted text={c.quienesSomos.p1} />
               </p>
             </div>
           </div>
