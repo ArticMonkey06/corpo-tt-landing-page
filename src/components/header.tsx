@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Logo } from "@/components/logo";
+import { useLanguage } from "@/contexts/language-context";
 
 const navLinksContent = {
   es: [
@@ -27,7 +28,8 @@ const navLinksContent = {
   ],
 };
 
-export function Header({ language, setLanguage }: { language: string, setLanguage: (lang: string) => void }) {
+export function Header() {
+  const { language, setLanguage } = useLanguage();
   const navLinks = navLinksContent[language as keyof typeof navLinksContent];
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
