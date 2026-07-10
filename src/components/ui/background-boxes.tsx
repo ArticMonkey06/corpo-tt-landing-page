@@ -9,8 +9,8 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const colors = [
     "hsl(var(--primary))",
     "hsl(var(--accent))",
-    "#8d9fce",
-    "#1e429f",
+    "var(--brand-blue-light)",
+    "var(--brand-blue)",
   ];
   const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];

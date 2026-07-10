@@ -13,7 +13,7 @@ export function ColourfulText({
   return (
     <span
       className={cn(
-        "bg-gradient-to-r from-primary via-[#8d9fce] to-[#1e429f] text-transparent bg-clip-text",
+        "bg-gradient-to-r from-primary via-brand-light to-brand text-transparent bg-clip-text",
         className
       )}
     >
