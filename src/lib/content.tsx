@@ -115,7 +115,6 @@ export const content = {
           title: "Ubicación",
           description: "Servicios a distancia",
           icon: locationIcon,
-          href: "#",
         },
         {
           title: "Correo Electrónico",
@@ -221,7 +220,6 @@ export const content = {
           title: "Location",
           description: "Remote services",
           icon: locationIcon,
-          href: "#",
         },
         {
           title: "Email",
