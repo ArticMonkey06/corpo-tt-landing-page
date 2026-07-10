@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { ColourfulText } from "@/components/ui/colourful-text";
+import { Highlighted } from "@/components/ui/highlighted";
 import { useLanguage } from "@/contexts/language-context";
 
 export function AboutSection() {
-  const { c, language } = useLanguage();
+  const { c } = useLanguage();
 
   return (
     <section id="about" className="w-full py-16 md:py-24 bg-background">
@@ -31,10 +31,7 @@ export function AboutSection() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-foreground relative z-20">{c.about.vision.title}</h3>
                 <p className="mt-2 text-foreground/80 relative z-20">
-                  {language === 'es' ?
-                    <>Ser la empresa líder en servicios de <ColourfulText text="apoyo empresarial a distancia" />, proporcionando <ColourfulText text="personal calificado" /> para las necesidades específicas de los clientes.</> :
-                    <>To be the leading company in <ColourfulText text="remote business support" /> services, providing <ColourfulText text="qualified personnel" /> for the specific needs of our clients.</>
-                  }
+                  <Highlighted text={c.about.vision.description1} />
                 </p>
               </div>
             </div>
@@ -53,10 +50,7 @@ export function AboutSection() {
               <div className="p-6">
               <h3 className="text-2xl font-bold text-foreground relative z-20">{c.about.mission.title}</h3>
               <p className="mt-2 text-foreground/80 relative z-20">
-                {language === 'es' ?
-                  <>Proporcionar <ColourfulText text="soluciones empresariales a distancia" /> eficientes y sostenibles, mejorar la experiencia del cliente a través de un <ColourfulText text="servicio de calidad" /> y garantizar servicios de calidad con <ColourfulText text="tiempos de respuesta expeditos" />.</> :
-                  <>To provide efficient and sustainable <ColourfulText text="remote business solutions" />, enhance the client experience through <ColourfulText text="quality service" />, and guarantee quality services with <ColourfulText text="prompt response times" />.</>
-                }
+                <Highlighted text={c.about.mission.description1} />
               </p>
               </div>
             </div>
