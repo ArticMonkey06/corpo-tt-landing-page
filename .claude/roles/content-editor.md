@@ -1,0 +1,1 @@
+../../.agents/roles/content-editor.md

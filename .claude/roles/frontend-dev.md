@@ -1,0 +1,1 @@
+../../.agents/roles/frontend-dev.md
