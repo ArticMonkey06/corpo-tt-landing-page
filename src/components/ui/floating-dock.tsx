@@ -19,7 +19,9 @@ export interface DockProps {
     title: string;
     description?: string;
     icon: React.ReactNode;
-    href: string;
+    // Optional: items without a destination render as non-interactive (no link),
+    // avoiding a dead "#" anchor that would jump to the top of the page.
+    href?: string;
   }[];
 }
 
@@ -47,12 +49,18 @@ export const FloatingDock = ({
         <div className="flex items-end h-full gap-x-4">
           {items.map((item, idx) => (
             <DockItem key={`dock-item-${idx}`} mouseX={mouseX} item={item}>
-              <Link
-                href={item.href}
-                className="w-full h-full rounded-full bg-neutral-700/50 flex items-center justify-center"
-              >
-                {item.icon}
-              </Link>
+              {item.href ? (
+                <Link
+                  href={item.href}
+                  className="w-full h-full rounded-full bg-neutral-700/50 flex items-center justify-center"
+                >
+                  {item.icon}
+                </Link>
+              ) : (
+                <div className="w-full h-full rounded-full bg-neutral-700/50 flex items-center justify-center">
+                  {item.icon}
+                </div>
+              )}
             </DockItem>
           ))}
         </div>
@@ -68,14 +76,22 @@ export const FloatingDock = ({
           {items.map((item, idx) => (
              <Tooltip key={`mobile-dock-item-${idx}`}>
               <TooltipTrigger asChild>
-                <Link
-                  href={item.href}
-                  className="w-12 h-12 relative"
-                >
-                  <div className="w-full h-full rounded-full bg-neutral-700/50 flex items-center justify-center">
-                    {item.icon}
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="w-12 h-12 relative"
+                  >
+                    <div className="w-full h-full rounded-full bg-neutral-700/50 flex items-center justify-center">
+                      {item.icon}
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="w-12 h-12 relative">
+                    <div className="w-full h-full rounded-full bg-neutral-700/50 flex items-center justify-center">
+                      {item.icon}
+                    </div>
                   </div>
-                </Link>
+                )}
               </TooltipTrigger>
               <TooltipContent>
                 <p className="font-bold">{item.title}</p>
@@ -95,7 +111,7 @@ export const DockItem = ({
   item,
 }: PropsWithChildren<{
   mouseX: any;
-  item: { title: string; description?: string; icon: React.ReactNode; href: string };
+  item: { title: string; description?: string; icon: React.ReactNode; href?: string };
 }>) => {
   let ref = useRef<HTMLDivElement>(null);
 
