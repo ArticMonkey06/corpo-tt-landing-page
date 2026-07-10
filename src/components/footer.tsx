@@ -1,7 +1,9 @@
+"use client";
 
 import { Logo } from "@/components/logo";
 import { Mail } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/language-context";
 
 const content = {
   es: {
@@ -12,7 +14,8 @@ const content = {
   }
 }
 
-export function Footer({ language }: { language: string }) {
+export function Footer() {
+  const { language } = useLanguage();
   const c = content[language as keyof typeof content];
   return (
     <footer className="bg-muted text-muted-foreground">
