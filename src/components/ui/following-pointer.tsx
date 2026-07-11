@@ -1,7 +1,7 @@
 
 "use client";
 import { cn } from "@/lib/utils";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, type MotionValue } from "framer-motion";
 import React, { useState, useRef } from "react";
 
 export const FollowerPointerCard = ({
@@ -53,8 +53,8 @@ export const FollowerPointer = ({
   y,
   title,
 }: {
-  x: any;
-  y: any;
+  x: MotionValue<number>;
+  y: MotionValue<number>;
   title?: string | React.ReactNode;
 }) => {
 

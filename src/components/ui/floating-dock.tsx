@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Link from "next/link";
 import React, { PropsWithChildren, useRef } from "react";
 import {
@@ -30,7 +29,7 @@ export const FloatingDock = ({
   mobileClassName,
   items,
 }: DockProps) => {
-  let mouseX = useMotionValue(Infinity);
+  const mouseX = useMotionValue(Infinity);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -110,18 +109,18 @@ export const DockItem = ({
   mouseX,
   item,
 }: PropsWithChildren<{
-  mouseX: any;
+  mouseX: MotionValue<number>;
   item: { title: string; description?: string; icon: React.ReactNode; href?: string };
 }>) => {
-  let ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-  let distance = useTransform(mouseX, (val: number) => {
-    let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+  const distance = useTransform(mouseX, (val: number) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthSync = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  let width = useSpring(widthSync, {
+  const widthSync = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  const width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
