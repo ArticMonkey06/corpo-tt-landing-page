@@ -5,6 +5,9 @@ import { LanguageProvider } from "@/contexts/language-context";
 export const metadata: Metadata = {
   title: 'CorpoTT Services',
   description: 'Servicios de apoyo empresarial a distancia con calidad y excelencia.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
