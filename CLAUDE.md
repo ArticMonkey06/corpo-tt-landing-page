@@ -56,5 +56,4 @@ There are no tests in this project.
 
 ## Gotchas
 
-- **`next.config.ts` sets `typescript.ignoreBuildErrors: true` and `eslint.ignoreDuringBuilds: true`.** A green `npm run build` does not mean the code is type-safe or lint-clean. Always run `npm run typecheck` and `npm run lint` explicitly to catch errors.
-- There is a real bug at `page.tsx` service `index === 4` (en): `<ColourfulText risk="currency risks" />` uses `risk=` instead of `text=`. Fix as `text=` if you touch that block.
+- **`next.config.ts` now sets `typescript.ignoreBuildErrors: false` and `eslint.ignoreDuringBuilds: false`** (issues #11 and #12), so `npm run build` fails on type or lint errors. Still, run `npm run typecheck` and `npm run lint` during development to catch issues before building.
