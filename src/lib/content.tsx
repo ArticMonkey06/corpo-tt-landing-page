@@ -7,6 +7,7 @@ import {
   Tags,
   UserCheck,
 } from "lucide-react";
+import { ASSETS } from "@/lib/assets";
 
 // Contact icons are identical across languages — defined once and reused.
 const locationIcon = (
@@ -51,49 +52,49 @@ export const content = {
           icon: Briefcase,
           title: "Outsourcing a Distancia",
           description: "Servicio de **operadores tecnológicos** que simplifica la **administración y contratación de personal**, integrando un equipo especializado a su operación para ofrecer soporte y soluciones tecnológicas sin complicaciones administrativas.",
-          image: "/images/outsourcing.webp",
+          image: ASSETS.services.outsourcing,
           alt: "Servicio de operadores tecnológicos para simplificar la administración de personal."
         },
         {
           icon: ShoppingCart,
           title: "Gestión de Compras Remotas",
           description: "Nos encargamos de la **selección de proveedores**, **negociación de precios** y **gestión de pedidos**, asegurando la distribución eficiente y utilizando herramientas digitales para optimizar tiempos y costos.",
-          image: "/images/sales-managment-corpott.webp",
+          image: ASSETS.services.purchasing,
           alt: "Gestión de compras remotas, desde la selección de proveedores hasta la distribución."
         },
         {
           icon: Plane,
           title: "Gestión de Reservas de Vuelos y Estadías",
           description: "Servicios de gestión de **reservas nacionales e internacionales**, coordinando detalles y usando **plataformas avanzadas** para encontrar las mejores opciones y precios.",
-          image: "/images/flights-managment-corpott.webp",
+          image: ASSETS.services.flights,
           alt: "Gestión de reservas de vuelos y estadías, tanto nacionales como internacionales."
         },
         {
           icon: Landmark,
           title: "Soluciones Financieras de Tesorería",
           description: "Soluciones para **optimizar la gestión del flujo de efectivo**, encargándonos de la planificación, control y seguimiento de recursos financieros para **maximizar la eficiencia** y minimizar riesgos.",
-          image: "/images/tesorería-corpott.webp",
+          image: ASSETS.services.treasury,
           alt: "Soluciones financieras de tesorería para optimizar la gestión del flujo de efectivo."
         },
         {
           icon: Wallet,
           title: "Estructura de Pagos y Cobros en Multimoneda",
           description: "Servicio especializado para **facilitar transacciones internacionales**, optimizando el proceso, asegurando **cumplimiento normativo** y minimizando **riesgos cambiarios**.",
-          image: "/images/currency-money-multi-wallet-corpott.webp",
+          image: ASSETS.services.multicurrency,
           alt: "Servicio especializado para facilitar transacciones internacionales en múltiples monedas."
         },
         {
           icon: Tags,
           title: "Etiquetado de Datos para IA",
           description: "Nuestros servicios construyen una **base sólida para modelos de IA** de alto rendimiento, asignando **etiquetas precisas** a grandes volúmenes de datos para que los modelos reconozcan patrones y tomen decisiones más inteligentes.",
-          image: "/images/ia-corpott.webp",
+          image: ASSETS.services.dataLabeling,
           alt: "Servicios de etiquetado de datos para modelos de inteligencia artificial de alto rendimiento."
         },
         {
           icon: UserCheck,
           title: "Personal Capacitado de Venezuela",
           description: "Ofrecemos **personal capacitado** sin las complicaciones administrativas de la contratación, **adaptándonos a sus necesidades** para que pueda concentrarse en sus objetivos principales.",
-          image: "/images/team-corpott.webp",
+          image: ASSETS.services.staff,
           alt: "Personal capacitado de Venezuela para adaptarse a las necesidades de su empresa."
         },
       ],
@@ -101,10 +102,10 @@ export const content = {
     clients: {
       title: "Nuestros Clientes",
       logos: [
-        { src: "/images/clients/client-felix.png", alt: "Felix" },
-        { src: "/images/clients/client-cb-pay.png", alt: "CB Pay", href: "https://www.cbpayapp.com/" },
-        { src: "/images/clients/client-ock.png", alt: "Servicios Logisticos OCK", href: "https://grupoock.com/index.html" },
-        { src: "/images/clients/client-abtrading.png", alt: "AB Trading America" },
+        { src: ASSETS.clients.felix, alt: "Felix" },
+        { src: ASSETS.clients.cbPay, alt: "CB Pay", href: "https://www.cbpayapp.com/" },
+        { src: ASSETS.clients.ock, alt: "Servicios Logisticos OCK", href: "https://grupoock.com/index.html" },
+        { src: ASSETS.clients.abTrading, alt: "AB Trading America" },
       ]
     },
     contact: {
@@ -156,49 +157,49 @@ export const content = {
           icon: Briefcase,
           title: "Remote Outsourcing",
           description: "A technology operator service that **simplifies personnel administration and hiring**, integrating a specialized team into your operation to offer support and technological solutions without administrative complications.",
-          image: "/images/outsourcing.webp",
+          image: ASSETS.services.outsourcing,
           alt: "Technology operator service to simplify personnel administration."
         },
         {
           icon: ShoppingCart,
           title: "Remote Purchasing Management",
           description: "We handle **supplier selection**, **price negotiation**, and **order management**, ensuring efficient distribution and using digital tools to optimize time and costs.",
-          image: "/images/sales-managment-corpott.webp",
+          image: ASSETS.services.purchasing,
           alt: "Remote purchasing management, from supplier selection to distribution."
         },
         {
           icon: Plane,
           title: "Flight and Accommodation Booking Management",
           description: "National and international **booking management services**, coordinating details and using **advanced platforms** to find the best options and prices.",
-          image: "/images/flights-managment-corpott.webp",
+          image: ASSETS.services.flights,
           alt: "Management of national and international flight and accommodation bookings."
         },
         {
           icon: Landmark,
           title: "Treasury Financial Solutions",
           description: "Solutions to **optimize cash flow management**, handling the planning, control, and monitoring of financial resources to **maximize efficiency** and minimize risks.",
-          image: "/images/tesorería-corpott.webp",
+          image: ASSETS.services.treasury,
           alt: "Treasury financial solutions to optimize cash flow management."
         },
         {
           icon: Wallet,
           title: "Multi-currency Payment and Collection Structure",
           description: "A specialized service to **facilitate international transactions**, optimizing the process, ensuring **regulatory compliance**, and minimizing **currency risks**.",
-          image: "/images/currency-money-multi-wallet-corpott.webp",
+          image: ASSETS.services.multicurrency,
           alt: "Specialized service to facilitate international transactions in multiple currencies."
         },
         {
           icon: Tags,
           title: "Data Labeling for AI",
           description: "Our services build a **solid foundation for high-performance AI models** by assigning **precise labels** to large volumes of data, enabling the models to recognize patterns and make smarter decisions.",
-          image: "/images/ia-corpott.webp",
+          image: ASSETS.services.dataLabeling,
           alt: "Data labeling services for high-performance artificial intelligence models."
         },
         {
           icon: UserCheck,
           title: "Trained Personnel from Venezuela",
           description: "We offer **trained personnel** without the administrative complications of hiring, **adapting to your needs** so you can focus on your main objectives.",
-          image: "/images/team-corpott.webp",
+          image: ASSETS.services.staff,
           alt: "Trained personnel from Venezuela to adapt to your company's needs."
         },
       ],
@@ -206,10 +207,10 @@ export const content = {
     clients: {
       title: "Our Clients",
       logos: [
-        { src: "/images/clients/client-felix.png", alt: "Felix" },
-        { src: "/images/clients/client-cb-pay.png", alt: "CB Pay", href: "https://www.cbpayapp.com/" },
-        { src: "/images/clients/client-ock.png", alt: "Servicios Logisticos OCK", href: "https://grupoock.com/index.html" },
-        { src: "/images/clients/client-abtrading.png", alt: "AB Trading America" },
+        { src: ASSETS.clients.felix, alt: "Felix" },
+        { src: ASSETS.clients.cbPay, alt: "CB Pay", href: "https://www.cbpayapp.com/" },
+        { src: ASSETS.clients.ock, alt: "Servicios Logisticos OCK", href: "https://grupoock.com/index.html" },
+        { src: ASSETS.clients.abTrading, alt: "AB Trading America" },
       ]
     },
     contact: {

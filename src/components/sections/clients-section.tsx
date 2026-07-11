@@ -1,10 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { content } from "@/lib/content";
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { ClientsTitle } from "./clients-title";
 
-// Client logos are identical across languages, so the marquee can be rendered
-// entirely on the server. Only the heading is a client island (ClientsTitle).
+// Client logos are identical across languages, so the marquee structure renders
+// on the server. Only the heading (ClientsTitle) and each logo (ImageWithSkeleton,
+// for its load/skeleton state) are client leaves.
 const logos = content.es.clients.logos;
 
 export function ClientsSection() {
@@ -25,9 +26,9 @@ export function ClientsSection() {
             aria-hidden={group === 1}
           >
             {[...logos, ...logos, ...logos].map((logo, index) => {
-              const wrapperClass = "mx-8 flex h-24 w-[180px] shrink-0 items-center justify-center md:mx-12";
+              const wrapperClass = "relative mx-8 flex h-24 w-[180px] shrink-0 items-center justify-center md:mx-12";
               const image = (
-                <Image
+                <ImageWithSkeleton
                   src={logo.src}
                   alt={logo.alt}
                   width={180}

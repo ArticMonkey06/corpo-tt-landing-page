@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { ColourfulText } from "@/components/ui/colourful-text";
 import { Highlighted } from "@/components/ui/highlighted";
 import { useLanguage } from "@/contexts/language-context";
+import { ASSETS } from "@/lib/assets";
 
 export function WhoWeAreSection() {
   const { c } = useLanguage();
@@ -13,8 +14,8 @@ export function WhoWeAreSection() {
       <div className="container mx-auto px-4">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-center">
           <div className="relative w-full aspect-video">
-            <Image
-              src="/images/who-are.webp"
+            <ImageWithSkeleton
+              src={ASSETS.sections.whoWeAre}
               alt="Imagen decorativa de la oficina de Corpo TT services"
               data-ai-hint="office workspace"
               fill

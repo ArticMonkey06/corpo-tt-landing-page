@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Highlighted } from "@/components/ui/highlighted";
 import { useLanguage } from "@/contexts/language-context";
+import { ASSETS } from "@/lib/assets";
 
 export function AboutSection() {
   const { c } = useLanguage();
@@ -20,8 +21,8 @@ export function AboutSection() {
           <CardSpotlight spotlightColor="var(--spotlight)" className="bg-secondary text-card-foreground p-0 overflow-hidden rounded-xl max-w-sm mx-auto">
             <div className="flex flex-col items-center text-center h-full">
               <div className="relative w-full h-80">
-                <Image
-                  src="/images/business-vision-corpott.webp"
+                <ImageWithSkeleton
+                  src={ASSETS.sections.vision}
                   alt="Imagen decorativa para la visión de la empresa"
                   data-ai-hint="telescope future"
                   fill
@@ -40,8 +41,8 @@ export function AboutSection() {
           <CardSpotlight spotlightColor="var(--spotlight)" className="bg-secondary text-card-foreground p-0 overflow-hidden rounded-xl max-w-sm mx-auto">
             <div className="flex flex-col items-center text-center h-full">
               <div className="relative w-full h-80">
-                <Image
-                  src="/images/business-mission-corpott.webp"
+                <ImageWithSkeleton
+                  src={ASSETS.sections.mission}
                   alt="Imagen decorativa para la misión de la empresa"
                   data-ai-hint="target goal"
                   fill

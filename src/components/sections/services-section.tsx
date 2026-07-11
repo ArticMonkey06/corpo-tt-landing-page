@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Highlighted } from "@/components/ui/highlighted";
 import { useLanguage } from "@/contexts/language-context";
@@ -33,7 +33,7 @@ export function ServicesSection() {
             >
               <div className="flex flex-col items-center text-center h-full">
                   <div className="relative w-full h-64">
-                    <Image
+                    <ImageWithSkeleton
                       src={service.image}
                       alt={service.alt}
                       data-ai-hint="tech service"
