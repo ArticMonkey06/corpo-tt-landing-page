@@ -49,8 +49,24 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <Button variant={language === 'es' ? 'default' : 'outline'} size="sm" onClick={() => setLanguage('es')}>ES</Button>
-          <Button variant={language === 'en' ? 'default' : 'outline'} size="sm" onClick={() => setLanguage('en')}>EN</Button>
+          <Button
+            variant={language === 'es' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setLanguage('es')}
+            aria-pressed={language === 'es'}
+            aria-label="Cambiar idioma a Español"
+          >
+            ES
+          </Button>
+          <Button
+            variant={language === 'en' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setLanguage('en')}
+            aria-pressed={language === 'en'}
+            aria-label="Switch language to English"
+          >
+            EN
+          </Button>
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
