@@ -1,8 +1,22 @@
 {
-  "name": "nextn",
+  "name": "corpott-landing-page",
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
+  "description": "Landing page bilingüe (ES/EN) de CorpoTT Services LLC, empresa de apoyo empresarial a distancia. Next.js 15, Tailwind CSS y shadcn/ui.",
+  "keywords": [
+    "landing-page",
+    "nextjs",
+    "tailwindcss",
+    "shadcn-ui",
+    "corpott",
+    "business-support",
+    "bilingual"
+  ],
+  "author": "CorpoTT Services LLC",
+  "contributors": [
+    "Teixeira49"
+  ],
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
