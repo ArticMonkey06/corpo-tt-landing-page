@@ -38,6 +38,7 @@ export function ServicesSection() {
                       alt={service.alt}
                       data-ai-hint="tech service"
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover rounded-t-xl"
                     />
                   </div>

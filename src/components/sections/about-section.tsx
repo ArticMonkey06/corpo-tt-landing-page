@@ -25,6 +25,7 @@ export function AboutSection() {
                   alt="Imagen decorativa para la visión de la empresa"
                   data-ai-hint="telescope future"
                   fill
+                  sizes="(max-width: 768px) 100vw, 384px"
                   className="object-cover rounded-t-xl"
                 />
               </div>
@@ -44,6 +45,7 @@ export function AboutSection() {
                   alt="Imagen decorativa para la misión de la empresa"
                   data-ai-hint="target goal"
                   fill
+                  sizes="(max-width: 768px) 100vw, 384px"
                   className="object-cover rounded-t-xl"
                 />
               </div>

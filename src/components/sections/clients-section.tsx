@@ -21,7 +21,7 @@ export function ClientsSection() {
         {[0, 1].map((group) => (
           <div
             key={group}
-            className="flex shrink-0 items-center animate-marquee group-hover:[animation-play-state:paused]"
+            className="flex shrink-0 items-center animate-marquee group-hover:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]"
             aria-hidden={group === 1}
           >
             {[...logos, ...logos, ...logos].map((logo, index) => {

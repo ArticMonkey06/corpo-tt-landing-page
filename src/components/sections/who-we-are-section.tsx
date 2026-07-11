@@ -18,6 +18,8 @@ export function WhoWeAreSection() {
               alt="Imagen decorativa de la oficina de Corpo TT services"
               data-ai-hint="office workspace"
               fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-xl shadow-lg"
             />
           </div>
