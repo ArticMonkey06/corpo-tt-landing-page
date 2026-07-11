@@ -1,14 +1,16 @@
 ---
 name: add-form
-description: (Futuro) Añade un formulario validado con react-hook-form + zod y las primitivas de shadcn (form.tsx). Úsala si se agrega, p. ej., un formulario de contacto real. Paquetes ya instalados, aún sin uso.
+description: (Futuro) Añade un formulario validado con react-hook-form + shadcn (form.tsx). Úsala si se agrega, p. ej., un formulario de contacto real. react-hook-form y form.tsx están instalados; zod se removió (issue #17) — instálalo al activar.
 ---
 
 # Skill: add-form (CorpoTT) — activable a futuro
 
-> **Estado:** los paquetes (`react-hook-form`, `zod`, `@hookform/resolvers`) y la
-> primitiva [`src/components/ui/form.tsx`](../../../src/components/ui/form.tsx) ya están
-> instalados, pero **hoy no hay formularios en uso**. Esta skill queda lista para cuando
-> se decida añadir uno (p. ej. contacto real en vez del `mailto:` actual).
+> **Estado:** `react-hook-form` y `@hookform/resolvers`, junto con la primitiva
+> [`src/components/ui/form.tsx`](../../../src/components/ui/form.tsx) (y `ui/label`),
+> se conservan instalados, pero **hoy no hay formularios en uso**. **`zod` se eliminó
+> en el issue #17** (0 usos); al activar esta skill, instala la librería de esquemas:
+> `npm i zod`. Esta skill queda lista para cuando se decida añadir un formulario
+> (p. ej. contacto real en vez del `mailto:` actual).
 
 Aplica el rol [frontend-dev](../../roles/frontend-dev.md).
 

@@ -54,10 +54,6 @@ There are no tests in this project.
 
 - **Images:** Static assets in [public/images/](public/images/). Use `next/image`. Remote images are only allowed from `placehold.co` and `storage.googleapis.com` (see [next.config.ts](next.config.ts)).
 
-## AI (Genkit) — scaffolded but unused
-
-[src/ai/genkit.ts](src/ai/genkit.ts) configures a Genkit instance with Google AI (`gemini-2.0-flash`), and [src/ai/dev.ts](src/ai/dev.ts) is an empty flow-registration entrypoint. No flows exist yet and nothing in the page uses AI. Run the dev harness with `npm run genkit:dev` / `npm run genkit:watch`. Requires a Google AI API key in the environment (`.env*` is gitignored).
-
 ## Gotchas
 
 - **`next.config.ts` sets `typescript.ignoreBuildErrors: true` and `eslint.ignoreDuringBuilds: true`.** A green `npm run build` does not mean the code is type-safe or lint-clean. Always run `npm run typecheck` and `npm run lint` explicitly to catch errors.
