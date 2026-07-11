@@ -18,7 +18,7 @@ export function HeroSection() {
             {c.hero.title}
           </h1>
           <LogoIcon
-            squareClassName="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14"
+            squareClassName="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-9 lg:w-9"
             gapClassName="gap-1 md:gap-1.5"
           />
         </div>
