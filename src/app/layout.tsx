@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   title: 'CorpoTT Services',
   description: 'Servicios de apoyo empresarial a distancia con calidad y excelencia.',
   icons: {
-    icon: '/favicon.ico',
+    // El `?v=2` versiona la URL para forzar a los navegadores a re-descargar el
+    // favicon (antes el sitio servía otro icono, que quedaba cacheado). Vercel
+    // ignora el query en estáticos y sigue sirviendo public/favicon.ico.
+    icon: '/favicon.ico?v=2',
   },
 };
 
