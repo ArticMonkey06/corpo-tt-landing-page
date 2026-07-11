@@ -6,6 +6,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Single-page bilingual (ES/EN) marketing landing page for **CorpoTT Services LLC**, a remote business-support company. Built with Next.js 15 (App Router), React 18, TypeScript, Tailwind CSS, and shadcn/ui. The design follows the "CorpoTT Design System" documented in [.docs/blueprint.md](.docs/blueprint.md) (brand colors, Inter typography, blocked content layout).
 
+## AI tooling: rules, roles & skills (portable)
+
+The project's conventions ("Rules"), agent profiles ("Roles") and task playbooks
+("Skills") are the **single source of truth** in [`.agents/`](.agents/) — shared by both
+Claude Code and OpenCode. **Do not duplicate them here.** Read them from:
+
+- **Rules** ([`.agents/rules/`](.agents/rules/)) — the repo conventions to follow:
+  [tailwind-tokens](.agents/rules/tailwind-tokens.md), [design-system](.agents/rules/design-system.md),
+  [react-architecture](.agents/rules/react-architecture.md), [bilingual-content](.agents/rules/bilingual-content.md),
+  [accessibility](.agents/rules/accessibility.md), [images](.agents/rules/images.md),
+  [animation](.agents/rules/animation.md), [shadcn-ui](.agents/rules/shadcn-ui.md),
+  [security-headers](.agents/rules/security-headers.md), [quality-gates](.agents/rules/quality-gates.md).
+- **Roles** ([`.agents/roles/`](.agents/roles/)) — `frontend-dev`, `content-editor`,
+  `seo-auditor`, `reviewer`, `deployer`.
+- **Skills** ([`.agents/skills/`](.agents/skills/)) — `seo-audit`, `code-review`,
+  `copy-review`, `deploy-vercel`, plus `add-form`/`add-carousel` (activable a futuro).
+
+Claude Code's own agents/skills in [`.claude/`](.claude/) **reference** (don't copy) the
+above. See [`.agents/README.md`](.agents/README.md) for how each tool consumes the folder.
+The gotchas below are a quick reference; the Rules are authoritative.
+
 ## Commands
 
 ```bash

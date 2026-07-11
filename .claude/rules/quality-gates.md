@@ -1,0 +1,1 @@
+../../.agents/rules/quality-gates.md
